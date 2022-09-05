@@ -157,6 +157,10 @@ background-color: rgb(8, 8, 8);
 .tabacos__catalog{
 
 }
+/* PAPELES */
+.main__papeles{
+    background-color: rgb(8, 8, 8);
+}
 /* MEDIA QUERIE PARA TABLET */
 @media (min-width: 576px) and (max-width: 992px) {
     .main__index{

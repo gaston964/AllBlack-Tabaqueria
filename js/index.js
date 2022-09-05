@@ -103,12 +103,11 @@ if ((producto1 != "") && (producto2 != "") && (producto3 != "") && (producto4 !=
 } else {
     console.log("ERROR: ES NECESARIO CARGAR TODOS LOS PRODUCTOS");
 } */
-let entrada = "Y"
+/* let entrada = "Y"
 while (entrada === "Y") {
     let numero = parseInt(prompt("Ingrese el numero a sumar:"));
     let numero2 = parseInt(prompt("Ingrese el segundo numero"));
     let suma = numero + numero2;
     alert(`La suma de los numeros ingresados es ${suma}`);
-    let entrada2= prompt("Desea hacer otra suma? Y o N");
-    entrada = entrada2;
-};
+    entrada= prompt("Desea hacer otra suma? Y o N");
+}; */

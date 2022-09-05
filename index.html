@@ -4,35 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon">
     <!-- CSS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>AllBLack - Tabaqueria</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
-                    <img class="logo" src="./resources/logo2.png" alt="">
-                </a>
-            <!-- Links -->
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/filtros.html">Filtros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/papeles.html">Papeles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tabacos.html">Tabaco</a>
-                    </li>
-                </ul>
+                    <a class="navbar-brand" href="./index.html"><img class="logo" src="./resources/logo2.png" alt="logo"></a>
+                    <a class="navbar-brand" href="./index.html"><img class="carrito" src="./resources/carrito.png" alt="carrito de compra"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/filtros.html">Filtros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/papeles.html">Papeles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/tabacos.html">Tabacos</a>
+                        </li>
+                    </ul>
+                    <!-- Buscador -->
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
     <main class="container-fluid main__ppal">
+        <!-- Carrusel -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -63,8 +74,9 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <!-- Productos -->
         <section class="container main__index">
-            <div class="container-card">
+            <div class="container-card prod__1">
                 <img src="./resources/Papel-OCB-Premium-Negro.jpg" alt="Avatar" class="image img__index" style="width:100%">
                 <h4 class="card-titulo">Papel OCB Premium Negro</h4>
                 <div class="middle">
@@ -72,21 +84,21 @@
                 </div>
                 
             </div>
-            <div class="container-card">
+            <div class="container-card prod__2">
                 <img src="./resources/tabaco-achalay-vainilla.jpg" alt="Avatar" class="image img__index" style="width:100%">
                 <h4 class="card-titulo">Tabaco Achalay Vainilla</h4>
                 <div class="middle">
                     <a href="" class="text">Comprar</a>
                 </div>
             </div>
-            <div class="container-card">
+            <div class="container-card prod__3">
                 <img src="./resources/tabaco-cuatro-leguas-50gr.jpg" alt="Avatar" class="image img__index" style="width:100%">
                 <h4 class="card-titulo">Tabaco Achalay Vainilla</h4>
                 <div class="middle">
                     <a href="" class="text">Comprar</a>
                 </div>
             </div>
-            <div class="container-card">
+            <div class="container-card prod__4">
                 <img src="./resources/Filtros-Libella-slim-mint.jpg" alt="Avatar" class="image img__index" style="width:100%">
                 <h4 class="card-titulo">Tabaco Achalay Vainilla</h4>
                 <div class="middle">
@@ -95,8 +107,25 @@
             </div>
         </section>
     </main>
-    <footer>
-        
+    <footer class="footer">
+        <section class="container-fluid row">
+            <article class="footer__nav col-xs-12 col-md-6 col-lg-4">
+                <ul>
+                    <li><a href="./pages/filtros.html">Filtros</a></li>
+                    <li><a href="./pages/papeles.html">Papeles</a></li>
+                    <li><a href="./pages/tabacos.html">Tabacos</a></li>
+                </ul>
+            </article>
+            <article class="footer__redes col-xs-12 col-md-6 col-lg-4">
+                <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="./resources/face.png" alt="">Facebook</a>
+                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="./resources/insta.png" alt=""> Instagram</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="./resources/whatsapp.png" alt="">+54 9 261-7779863</a>
+            </article>
+            <article class="footer__logo col-xs-12 col-md-12 col-lg-4">
+                <img class="footer__logo-img" src="./resources/logo22.png" alt="logo">
+            </article>
+            <p class="text-center footer__derechos">AllBLack - Todos los derechos reservados. 2022</p>
+        </section>
     </footer>
     <script src="./js/index.js"></script>
     <!-- JavaScript Bundle with Popper -->

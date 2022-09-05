@@ -12,28 +12,57 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
             <div class="container-fluid">
-            <!-- Links -->
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
-                    </li>
-                </ul>
+                    <a class="navbar-brand" href="../index.html"><img class="logo" src="../resources/logo2.png" alt="logo"></a>
+                    <a class="navbar-brand" href="../index.html"><img class="carrito" src="../resources/carrito.png" alt="carrito de compra"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./filtros.html">Filtros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./papeles.html">Papeles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./tabacos.html">Tabacos</a>
+                        </li>
+                    </ul>
+                    <!-- Buscador -->
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
     <main>
         
     </main>
-    <footer>
-
+    <footer class="footer">
+        <section class="container-fluid row">
+            <article class="footer__nav col-xs-12 col-md-6 col-lg-4">
+                <ul>
+                    <li><a href="./filtros.html">Filtros</a></li>
+                    <li><a href="#">Papeles</a></li>
+                    <li><a href="./tabacos.html">Tabacos</a></li>
+                </ul>
+            </article>
+            <article class="footer__redes col-xs-12 col-md-6 col-lg-4">
+                <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="../resources/face.png" alt="">Facebook</a>
+                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="../resources/insta.png" alt=""> Instagram</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="../resources/whatsapp.png" alt="">+54 9 261-7779863</a>
+            </article>
+            <article class="footer__logo col-xs-12 col-md-12 col-lg-4">
+                <img class="footer__logo-img" src="../resources/logo22.png" alt="logo">
+            </article>
+            <p class="text-center footer__derechos">AllBLack - Todos los derechos reservados. 2022</p>
+        </section>
     </footer>
     <script src="./index.js"></script>
     <!-- JavaScript Bundle with Popper -->

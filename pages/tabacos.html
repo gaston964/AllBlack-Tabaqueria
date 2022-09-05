@@ -4,36 +4,180 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon">
     <!-- CSS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Tabacos</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
             <div class="container-fluid">
-            <!-- Links -->
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
-                    </li>
-                </ul>
+                    <a class="navbar-brand" href="../index.html"><img class="logo" src="../resources/logo2.png" alt="logo"></a>
+                    <a class="navbar-brand" href="../index.html"><img class="carrito" src="../resources/carrito.png" alt="carrito de compra"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./filtros.html">Filtros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./papeles.html">Papeles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tabacos</a>
+                        </li>
+                    </ul>
+                    <!-- Buscador -->
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
     <main>
-        
-    </main>
-    <footer>
+        <section class="main__tabacos">
+            <article class="container-fluid tabacos__catalogo row row-cols-4 justify-content-md-center">
+                <div class="container-card col-xs-12 col-md-6 col-lg-3 col-xl-3 my-3">
+                    <img src="../resources/tabaco-achalay-menta.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Achalay Menta</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
 
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-achalay-vainilla.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Achalay Vainilla</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+                
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-achalay.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Achalay</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-cerrito-chocolate.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Cerrito Chocolate</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-cerrito-vainilla.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Cerrito Vainilla</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-cerrito.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Cerrito</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-cuatro-leguas-50gr.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Cuatro Leguas</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-don-jose.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Don Jose</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-las-hojas-natural.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Las Hojas Natural</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-las-hojas.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Las Hojas</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-red-field-natural.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Red Field Natural</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-red-field-vainilla.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Red Field Vainilla</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-saints-natural-30gr.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Saints Natural</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="container-card col my-3">
+                    <img src="../resources/tabaco-saints-virginia-50gr.jpg" alt="Avatar" class="image img__index" style="width:100%">
+                    <h4 class="card-titulo">Tabaco Saints Virginia</h4>
+                    <div class="middle">
+                        <a href="" class="text">Comprar</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="container-fluid row">
+            <article class="footer__nav col-xs-12 col-md-6 col-lg-4">
+                <ul>
+                    <li><a href="./filtros.html">Filtros</a></li>
+                    <li><a href="./papeles.html">Papeles</a></li>
+                    <li><a href="#">Tabacos</a></li>
+                </ul>
+            </article>
+            <article class="footer__redes col-xs-12 col-md-6 col-lg-4">
+                <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="../resources/face.png" alt="">Facebook</a>
+                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="../resources/insta.png" alt=""> Instagram</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><img class="footer__img my-2" src="../resources/whatsapp.png" alt="">+54 9 261-7779863</a>
+            </article>
+            <article class="footer__logo col-xs-12 col-md-12 col-lg-4">
+                <img class="footer__logo-img" src="../resources/logo22.png" alt="logo">
+            </article>
+            <p class="text-center footer__derechos">AllBLack - Todos los derechos reservados. 2022</p>
+        </section>
     </footer>
     <script src="./index.js"></script>
     <!-- JavaScript Bundle with Popper -->

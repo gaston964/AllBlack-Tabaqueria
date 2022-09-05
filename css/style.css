@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
+/* INDEX */
 .logo{
     width: 95px;
     height: 35px;
@@ -148,6 +149,13 @@ background-color: rgb(8, 8, 8);
 }
 .footer__derechos{
     color: aliceblue;
+}
+/* TABACOS */
+.main__tabacos{
+    background-color: rgb(8, 8, 8);
+}
+.tabacos__catalog{
+
 }
 /* MEDIA QUERIE PARA TABLET */
 @media (min-width: 576px) and (max-width: 992px) {

@@ -111,3 +111,45 @@ while (entrada === "Y") {
     alert(`La suma de los numeros ingresados es ${suma}`);
     entrada= prompt("Desea hacer otra suma? Y o N");
 }; */
+
+/* const notas = (a, b, c, d) => {
+    let resultado = a + b + c + d;
+    let promedio = resultado / 4;
+    return promedio
+};
+let entrada = "Y";
+while (entrada === "Y") {
+    alert("Ingrese la nota de los alumnos:");
+    let nota1 = parseInt(prompt("Ingrese la 1er nota: "));
+    let nota2 = parseInt(prompt("Ingrese la 2da nota: "));
+    let nota3 = parseInt(prompt("Ingrese la 3er nota: "));
+    let nota4 = parseInt(prompt("Ingrese la 4ta nota: "));
+    console.log(notas(nota1, nota2, nota3, nota4));
+    alert(`El promedio de las notas ingresadas es ${notas(nota1, nota2, nota3, nota4)}`);
+    entrada = prompt("Desea ingresar las notas de otro almuno? Y o N");
+}; */
+
+const notas = (a, b, c, d) => {
+    let resultado = a + b + c + d;
+    let promedio = resultado / 4;
+    return promedio
+};
+const ingresarNotas = () =>{
+    alert("Ingrese las notas del alumno")
+    let entrada = "S"
+    while (entrada === "S") {
+        let nota1 = Number(prompt("Ingrese la 1er nota: "));
+        let nota2 = Number(prompt("Ingrese la 2da nota: "));
+        let nota3 = Number(prompt("Ingrese la 3er nota: "));
+        let nota4 = Number(prompt("Ingrese la 4ta nota: "));
+        alert(`El promedio de las notas ingresadas es ${notas(nota1, nota2, nota3, nota4)}`);
+        if (notas(nota1, nota2, nota3, nota4) >= 7) {
+            alert("El alumno pasa la asignatura");
+        } else {
+            alert("El alumno reprueba la asignatura");
+        };
+        entrada = toUpperCase(prompt("Desea ingresar las notas de otro almuno? S o N"));
+    }
+};
+alert("Vamos a sumar las notas y calcular el promedio del alumno.")
+ingresarNotas();

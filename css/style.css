@@ -1,51 +1,61 @@
-*{
-    margin:0px;
+* {
+    margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+
 /* INDEX */
-.logo{
+.logo {
     width: 95px;
     height: 35px;
     margin-left: 5px;
     padding: 0%;
 }
-.carrito{
+
+.carrito {
     width: 35x;
     height: 40px;
 }
-.nav-link{
-    color:white;
+
+.nav-link {
+    color: white;
 }
-.main__ppal{
-background-color: rgb(8, 8, 8);
+
+.main__ppal {
+    background-color: rgb(8, 8, 8);
 }
-.carrusel__img{
+
+.carrusel__img {
     width: 350px;
     height: 350px;
 }
-.main__index{
+
+.main__index {
     background-color: rgb(8, 8, 8);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     justify-content: space-around;
 }
-.prod__1{
+
+.prod__1 {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.prod__2{
+
+.prod__2 {
     grid-column: 2/3;
     grid-row: 1/2;
 }
-.prod__3{
+
+.prod__3 {
     grid-column: 3/4;
     grid-row: 1/2;
 }
-.prod__4{
+
+.prod__4 {
     grid-column: 4/5;
     grid-row: 1/2;
 }
@@ -58,9 +68,11 @@ background-color: rgb(8, 8, 8);
     flex-direction: column;
     align-items: center;
 }
-.card-titulo{
+
+.card-titulo {
     color: rgb(255, 255, 255);
 }
+
 .image {
     opacity: 1;
     display: block;
@@ -70,6 +82,7 @@ background-color: rgb(8, 8, 8);
     backface-visibility: hidden;
     border-radius: 35px;
 }
+
 .middle {
     transition: .5s ease;
     opacity: 0;
@@ -80,9 +93,11 @@ background-color: rgb(8, 8, 8);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .container-card:hover .image {
     opacity: 0.3;
 }
+
 .container-card:hover .middle {
     opacity: 1;
 }
@@ -94,125 +109,151 @@ background-color: rgb(8, 8, 8);
     padding: 16px 32px;
     text-decoration: none;
 }
-.text:hover{
+
+.text:hover {
     color: black;
 }
-.img__index{
+
+.img__index {
     width: 350px;
     height: 350px;
 }
-.footer{
+
+.footer {
     background-color: rgb(8, 8, 8);
     padding-top: 25px;
 }
-.footer__nav{
+
+.footer__nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.footer__nav li{
+
+.footer__nav li {
     text-decoration: none;
     list-style: none;
 }
-.footer__nav a{
+
+.footer__nav a {
     text-decoration: none;
     color: aliceblue;
     font-size: larger;
 }
-.footer__nav a:hover{
+
+.footer__nav a:hover {
     color: #787e7c;
 }
-.footer__redes{
+
+.footer__redes {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.footer__redes a{
+
+.footer__redes a {
     text-decoration: none;
     color: aliceblue;
 }
-.footer__redes a:hover{
+
+.footer__redes a:hover {
     color: #787e7c;
 }
-.footer__img{
+
+.footer__img {
     width: 35px;
     height: 35px;
 }
-.footer__logo{
+
+.footer__logo {
     display: flex;
     justify-content: center;
 }
-.footer__logo-img{
+
+.footer__logo-img {
     width: 300px;
     height: 200px;
 }
-.footer__derechos{
+
+.footer__derechos {
     color: aliceblue;
 }
-/* TABACOS */
-.main__tabacos{
-    background-color: rgb(8, 8, 8);
-}
-.tabacos__catalog{
 
+/* TABACOS */
+.main__tabacos {
+    background-color: rgb(8, 8, 8);
 }
+
+.tabacos__catalog {}
+
 /* PAPELES */
-.main__papeles{
+.main__papeles {
     background-color: rgb(8, 8, 8);
 }
+
 /* FILTROS */
-.main__filtros{
+.main__filtros {
     background-color: rgb(8, 8, 8);
 }
+
 /* MEDIA QUERIE PARA TABLET */
 @media (min-width: 576px) and (max-width: 992px) {
-    .main__index{
+    .main__index {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         align-self: center;
     }
-    .prod__1{
+
+    .prod__1 {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
     }
-    .prod__2{
+
+    .prod__2 {
         grid-column: 2/3;
         grid-row: 1/2;
     }
-    .prod__3{
+
+    .prod__3 {
         grid-column: 1/2;
         grid-row: 2/3;
     }
-    .prod__4{
+
+    .prod__4 {
         grid-column: 2/3;
         grid-row: 2/3;
     }
 }
+
 /* MEDIA QUERIE PARA CELULAR */
 @media (min-width: 320px) and (max-width: 575px) {
-    .main__index{
+    .main__index {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         align-self: center;
     }
-    .prod__1{
+
+    .prod__1 {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
     }
-    .prod__2{
+
+    .prod__2 {
         grid-column: 1/2;
         grid-row: 2/3;
     }
-    .prod__3{
+
+    .prod__3 {
         grid-column: 1/2;
         grid-row: 3/4;
     }
-    .prod__4{
+
+    .prod__4 {
         grid-column: 1/2;
         grid-row: 4/5;
     }

@@ -129,27 +129,60 @@ while (entrada === "Y") {
     entrada = prompt("Desea ingresar las notas de otro almuno? Y o N");
 }; */
 
-const notas = (a, b, c, d) => {
-    let resultado = a + b + c + d;
-    let promedio = resultado / 4;
-    return promedio
+/* 
+Clase de Objetos!
+
+class Producto{
+  constructor(nombre, imagen, precio, cantidad){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.imagen = imagen;
+    // this.vendido = false;
+    this.cantidad = cantidad;
+  }
+
+  vender(){
+    this.cantidad = this.cantidad - 1;
+  }
+}
+
+const producto1 = new Producto("monitor", "htt", 1234, 5);
+console.log(producto1);
+
+producto1.vender();
+console.log(producto1);
+ */
+
+let dolares = 280.88;
+let euro = 143.86;
+let cambioDolar = () =>{
+    let pesos =Number(prompt(("Ingrese los dolares a cambiar a pesos argentinos")));
+    alert(`Serian ${pesos * dolares} pesos argentinos`);
 };
-const ingresarNotas = () =>{
-    alert("Ingrese las notas del alumno")
-    let entrada = "S"
-    while (entrada === "S") {
-        let nota1 = Number(prompt("Ingrese la 1er nota: "));
-        let nota2 = Number(prompt("Ingrese la 2da nota: "));
-        let nota3 = Number(prompt("Ingrese la 3er nota: "));
-        let nota4 = Number(prompt("Ingrese la 4ta nota: "));
-        alert(`El promedio de las notas ingresadas es ${notas(nota1, nota2, nota3, nota4)}`);
-        if (notas(nota1, nota2, nota3, nota4) >= 7) {
-            alert("El alumno pasa la asignatura");
-        } else {
-            alert("El alumno reprueba la asignatura");
-        };
-        entrada = toUpperCase(prompt("Desea ingresar las notas de otro almuno? S o N"));
+let cambioEuro = () =>{
+    let pesos =Number(prompt(("Ingrese los euros a cambiar a pesos argentinos")));
+    alert(`Serian ${pesos * euro} pesos argentinos`);
+}
+
+let divisas = () =>{
+    alert("Bienvenido al conversor de divisas.")
+    let salir = "S";
+    while (salir === "S") {
+        let opcion = Number(prompt("Elija la divisa a cambiar: \n 1- Dolares \n 2- Euros"))
+        switch (opcion) {
+            case 1:
+                cambioDolar();
+                break;
+            case 2:
+                cambioEuro();
+                break;
+            default:
+                alert("Ingrese una opción válida");
+                break;
+        }
+        salir= prompt(("Desea hacer otra conversión? S o N")).toUpperCase();
     }
 };
-alert("Vamos a sumar las notas y calcular el promedio del alumno.")
-ingresarNotas();
+
+divisas();
+

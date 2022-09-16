@@ -40,4 +40,4 @@ while (salida === "S") {
 
 alert(`Usted agrego ${compra.length} productos a su carrito.`)
 const total = compra.reduce((acc, item) => acc + item.precio, 0)
-alert(`El total de los productos agregados es ${total} pesos y sus nombres son ${nombre}`)
+alert(`El total de los productos agregados es ${total} pesos`)

@@ -191,7 +191,15 @@
 .main__papeles {
     background-color: rgb(8, 8, 8);
 }
-
+.div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid white;
+    color: white;
+    width: 350px;
+    height: 350px;
+}
 /* FILTROS */
 .main__filtros {
     background-color: rgb(8, 8, 8);

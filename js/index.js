@@ -1,4 +1,4 @@
-const productos = [
+/* const productos = [
     { nombre: "Tabaco Achalay", precio: 250 },
     { nombre: "Tabaco Achalay Vainilla", precio: 320 },
     { nombre: "Tabaco Achalay Menta", precio: 280 },
@@ -41,3 +41,30 @@ while (salida === "S") {
 alert(`Usted agrego ${compra.length} productos a su carrito.`)
 const total = compra.reduce((acc, item) => acc + item.precio, 0)
 alert(`El total de los productos agregados es ${total} pesos`)
+ */
+
+let contenedor = document.getElementById("contenedor");
+const papeles = [
+    { id: 1, nombre: "Papel de Celulosa Sativa Club Tradicional", precio: 350, img: "../resources/Papel-Celulosa-Sativa-Club-tradicional.png" },
+    { id: 2, nombre: "Papel OCB Blanco", precio: 220, img: "../resources/Papel-OCB-Blanco.png" },
+    { id: 3, nombre: "Papel OCB Organico", precio: 290, img: "../resources/Papel-OCB-organico.png" },
+    { id: 4, nombre: "Papel OCB Premium Negro", precio: 250, img: "../resources/Papel-OCB-Premium-Negro.jpg" },
+    { id: 5, nombre: "Papel OCB Ultimate", precio: 275, img: "../resources/Papel-OCB-ultimate_1.png" },
+];
+papeles.forEach(producto => {
+    let item = document.createElement("div");
+    item.className = "div"
+    item.innerHTML = `
+        <h2>Id: ${producto.id}</h2>
+        <h3>Producto: ${producto.nombre}</h3>
+        <h4>$${producto.precio}</h4>
+    `;
+    contenedor.append(item)
+});
+
+/* function respuesta(nombre){
+    console.log("Click", nombre);
+}
+let boton = document.getElementById("boton");
+  // boton.onclick = respuesta;
+boton.addEventListener("click", () => respuesta("gaston")); */

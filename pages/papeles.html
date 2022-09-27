@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black">
             <div class="container-fluid">
                     <a class="navbar-brand" href="../index.html"><img class="logo" src="../resources/logo2.png" alt="logo"></a>
-                    <a class="navbar-brand" href="../index.html"><img class="carrito" src="../resources/carrito.png" alt="carrito de compra"></a>
+                    <botton id = "carritoCompra" class="navbar-brand" href="../index.html"><img class="carrito" src="../resources/carrito.png" alt="carrito de compra"></botton>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -34,57 +34,18 @@
                         </li>
                     </ul>
                     <!-- Buscador -->
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
+                    <div class="d-flex" role="search">
+                        <input id="inputBuscar" class="form-control me-2" type="search" placeholder="Buscar.." aria-label="Search">
+                        <button id="botonBuscar" class="btn btn-outline-success" type="submit">Buscar</button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <section id="contenedor" class="main__papeles">
-            <!-- <article class="container-fluid row row-cols-3 justify-content-md-center">
-                <div class="container-card col-xs-12  my-3">
-                    <img src="../resources/Papel-Celulosa-Sativa-Club-tradicional.png" alt="Avatar" class="image img__index" style="width:100%">
-                    <h4 class="card-titulo">Papel de Celulosa Sativa Club Tradicional</h4>
-                    <div class="middle">
-                        <a href="" class="text">Comprar</a>
-                    </div>
-                </div>
-
-                <div class="container-card col-xs-12  my-3">
-                    <img src="../resources/Papel-OCB-Blanco.png" alt="Avatar" class="image img__index" style="width:100%">
-                    <h4 class="card-titulo">Papel OCB Blanco</h4>
-                    <div class="middle">
-                        <a href="" class="text">Comprar</a>
-                    </div>
-                </div>
-
-                <div class="container-card col-xs-12  my-3">
-                    <img src="../resources/Papel-OCB-organico.png" alt="Avatar" class="image img__index" style="width:100%">
-                    <h4 class="card-titulo">Papel OCB Organico</h4>
-                    <div class="middle">
-                        <a href="" class="text">Comprar</a>
-                    </div>
-                </div>
-
-                <div class="container-card col-xs-12  my-3">
-                    <img src="../resources/Papel-OCB-Premium-Negro.jpg" alt="Avatar" class="image img__index" style="width:100%">
-                    <h4 class="card-titulo">Papel OCB Premium Negro</h4>
-                    <div class="middle">
-                        <a href="" class="text">Comprar</a>
-                    </div>
-                </div>
-
-                <div class="container-card col-xs-12  my-3">
-                    <img src="../resources/Papel-OCB-ultimate_1.png" alt="Avatar" class="image img__index" style="width:100%">
-                    <h4 class="card-titulo">Papel OCB Ultimate</h4>
-                    <div class="middle">
-                        <a href="" class="text">Comprar</a>
-                    </div>
-                </div>
-            </article> -->
+        <section class="main__papeles">
+            <article id="contenedor" class="container-fluid row row-cols-3 justify-content-md-center">
+            </article>
         </section>
     </main>
     <footer class="footer">

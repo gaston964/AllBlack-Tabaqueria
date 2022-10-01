@@ -14,7 +14,7 @@ const filtros = [
 ];
 filtros.forEach(item => {
     let productos = document.createElement("div");
-    productos.className = "container-card col my-3";
+    productos.className = "container-card col-xs-12 col-md-6 col-lg-4 my-3";
     productos.innerHTML = `
         <img src="${item.img}" alt="Avatar" class="image img__index" style="width:100%">
         <h4 class="card-titulo text-center">${item.nombre} </h4>

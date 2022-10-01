@@ -7,12 +7,12 @@ const productosIndex = [
 ]
 productosIndex.forEach(item => {
     let producto = document.createElement("div");
-    producto.className = "container-card my-3";
+    producto.className = "container-card col-xs-12 col-md-6 col-lg-4 my-3";
     producto.innerHTML = `
         <img src="${item.img}" alt="Avatar" class="image img__index"
             style="width:100%">
         <h4 class="card-titulo text-center">${item.nombre}</h4>
-        <h4 class="card-titulo">${item.precio}</h4>
+        <h4 class="card-titulo">$${item.precio}</h4>
         <div class="middle">
             <button id="${item.id}" class="text">Comprar</button>
         </div>
@@ -20,10 +20,3 @@ productosIndex.forEach(item => {
     contenedor.append(producto)
 });
 
-
-
-/* localStorage.setItem("nombre", "Gaston");
-localStorage.setItem("arreglo", [1, 2, 3]);
-localStorage.setItem("valor", "true");
-let mensaje = localStorage.getItem("nombre");
-console.log(mensaje); */

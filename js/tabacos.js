@@ -80,7 +80,7 @@ const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = "";
     carrito.forEach((prod) => {
         let div = document.createElement("div");
-        div.className = "";
+        div.className = "contenedor__carrito";
         div.innerHTML = `
         <p>${prod.nombre}</p>
         <p>$${prod.precio}</p>

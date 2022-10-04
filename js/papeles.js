@@ -41,10 +41,10 @@ papeles.forEach(producto => {
                 <h5 class="card-title">${producto.nombre}</h5>
                 <h5 class="card-title">$${producto.precio}</h5>
                 <p class="card-text">${producto.descr} </p>
-                <div class="">
-                <input type="checkbox" name="" id="">x1
-                <input type="checkbox" name="" id="">x${producto.xmayor}
-                </div>
+                <form class="">
+                <input type="radio" name="tipo" value="almenor" checked id="">x1
+                <input type="radio" name="tipo" value="pormayor" id="">x${producto.xmayor}
+                </form>
                 <button id = "${producto.id}" class="text">Comprar</button>
             </div>
         </div>

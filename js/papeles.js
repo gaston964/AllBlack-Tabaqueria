@@ -19,32 +19,35 @@ botonVaciar.addEventListener("click", () => {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     localStorage.clear("carrito");
 })
-class Producto {
-    constructor(id, nombre, precio, img) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.img = img;
-    }
-}
-const papeles = []
-papeles.push(new Producto(1, "Papel de Celulosa Sativa Club Tradicional", 250, "../resources/Papel-Celulosa-Sativa-Club-tradicional.png"))
-papeles.push(new Producto(2, "Papel OCB Blanco", 220, "../resources/Papel-OCB-Blanco.png"))
-papeles.push(new Producto(3, "Papel OCB Organico", 292, "../resources/Papel-OCB-organico.png"))
-papeles.push(new Producto(4, "Papel OCB Premium Negro", 250, "../resources/Papel-OCB-Premium-Negro.jpg"))
-papeles.push(new Producto(5, "Papel OCB Ultimate", 275, "../resources/Papel-OCB-ultimate_1.png"))
+const papeles =[
+    {id: 1, nombre: "Papel de Celulosa Sativa Club Tradicional", precio: 250, img: "../resources/Papel-Celulosa-Sativa-Club-tradicional.png", descr: "Papel transparente de celulosa. El sobre trae 40 papeles. La caja trae  22 sobres.", cantidad: 1, xmayor: 22},
+    {id: 2, nombre: "Papel OCB Blanco", precio: 220, img: "../resources/Papel-OCB-Blanco.png", descr: "Papel 1¼ - 77mm x 44mm. Combustión media, 50 papeles por librito. El display trae 25 libritos.", cantidad: 1, xmayor: 25},
+    {id: 3, nombre: "Papel OCB Organico", precio: 292, img: "../resources/Papel-OCB-organico.png", descr: "Papel 77mm x 44mm. No blanqueado - orgánico. Combustión lenta. 50 papeles por librito. El display trae 25 libritos", cantidad: 1, xmayor: 25},
+    {id: 4, nombre: "Papel OCB Premium Negro", precio: 250, img: "../resources/Papel-OCB-Premium-Negro.jpg", descr: "OCB Negro Clásico. Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos", cantidad: 1, xmayor: 25},
+    {id: 5, nombre: "Papel OCB Ultimate", precio: 275, img: "../resources/Papel-OCB-ultimate_1.png", descr: "Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos.", cantidad: 1, xmayor: 25}
+    ];
 console.log(papeles);
 
 papeles.forEach(producto => {
     let item = document.createElement("div");
-    item.className = "container-card col-xs-12 col-md-6 col-lg-4  my-3"
+    item.className = "card col-xs-12 col-md-4 col-lg-4 my-3 mx-2"
     item.innerHTML = `
-            <img src="${producto.img}" alt="Avatar" class="image img__index" style="width:100%">
-            <h4 class="card-titulo text-center">${producto.nombre}</h4>
-            <h4 class="card-titulo">$${producto.precio}</h4>
-            <div class="middle">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="${producto.img}" class="img-fluid rounded-start img__index" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <h5 class="card-title">$${producto.precio}</h5>
+                <p class="card-text">${producto.descr} </p>
+                <div class="">
+                <input type="checkbox" name="" id="">x1
+                <input type="checkbox" name="" id="">x${producto.xmayor}
+                </div>
                 <button id = "${producto.id}" class="text">Comprar</button>
             </div>
+        </div>
     `;
     contenedor.append(item)
     const boton = document.getElementById(producto.id)
@@ -67,7 +70,7 @@ const agregarAlCarrito = (prodId) => {
             id: item.id,
             nombre: item.nombre,
             precio: item.precio,
-            cantidad: 1
+            cantidad: item.cantidad
         })
     }
     actualizarCarrito();

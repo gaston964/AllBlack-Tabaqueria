@@ -48,7 +48,6 @@ papeles.forEach(producto => {
     `;
     contenedor.append(item)
     const boton = document.getElementById(producto.id)
-    /*     boton.addEventListener("click", () => comprarProd(producto)) */
     boton.addEventListener("click", () => {
         agregarAlCarrito(producto.id);
     })
@@ -98,39 +97,10 @@ const actualizarCarrito = () => {
     contadorCarrito.innerText = carrito.length;
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 const buscarProducto = (entrada) => {
     console.log(entrada);
     let productoBuscado = papeles.find((producto) => producto.nombre.toUpperCase().includes(entrada));
     console.log(productoBuscado);
     inputBuscar.value = '';
 };
-
 botonBuscar.addEventListener('click', () => buscarProducto(inputBuscar.value.toUpperCase()));
-/* const comprarProd = (producto) => {
-    let productoExiste = carrito.find(item => item.id === producto.id)
-    if (productoExiste === undefined) {
-        carrito.push({
-            id: producto.id,
-            nombre: producto.nombre,
-            precio: producto.precio,
-
-            cantidad: 1
-        })
-    } else {
-        productoExiste.precio += productoExiste.precio;
-        productoExiste.cantidad = productoExiste.cantidad + 1;
-    }
-};
-botonCompra.addEventListener("click", () => console.log(carrito)) */

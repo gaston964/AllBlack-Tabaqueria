@@ -3,9 +3,12 @@
     padding: 0px;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Oswald', sans-serif;
+    background-image: url(../resources/patternpad.svg);
 }
+
 /* INDEX */
 .logo {
     width: 95px;
@@ -23,17 +26,9 @@ body{
     color: white;
 }
 
-.main__ppal {
-    background-color: rgb(8, 8, 8);
-}
-
 .carrusel__img {
     width: 350px;
     height: 350px;
-}
-
-.main__index {
-    background-color: rgb(8, 8, 8);
 }
 
 .container-card {
@@ -100,7 +95,6 @@ body{
 }
 
 .footer {
-    background-color: rgb(8, 8, 8);
     padding-top: 25px;
 }
 
@@ -154,32 +148,15 @@ body{
 .footer__logo-img {
     width: 300px;
     height: 200px;
+    border-radius: 75px;
 }
 
 .footer__derechos {
     color: aliceblue;
 }
 
-/* TABACOS */
-.main__tabacos {
-    background-color: rgb(8, 8, 8);
-}
-
-/* PAPELES */
-.main__papeles {
-    background-color: rgb(8, 8, 8);
-}
-
-/* FILTROS */
-.main__filtros {
-    background-color: rgb(8, 8, 8);
-}
-
 /* MEDIA QUERIE PARA TABLET */
-@media (min-width: 576px) and (max-width: 992px) {
-}
+@media (min-width: 576px) and (max-width: 992px) {}
 
 /* MEDIA QUERIE PARA CELULAR */
-@media (min-width: 320px) and (max-width: 575px) {
-    
-}
+@media (min-width: 320px) and (max-width: 575px) {}

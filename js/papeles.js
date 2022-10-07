@@ -20,11 +20,11 @@ botonVaciar.addEventListener("click", () => {
     localStorage.clear("carrito");
 })
 const papeles =[
-    {id: 1, nombre: "Papel de Celulosa Sativa Club Tradicional", precio: 250, img: "../resources/Papel-Celulosa-Sativa-Club-tradicional.png", descr: "Papel transparente de celulosa. El sobre trae 40 papeles. La caja trae  22 sobres.", cantidad: 1, xmayor: 22},
-    {id: 2, nombre: "Papel OCB Blanco", precio: 220, img: "../resources/Papel-OCB-Blanco.png", descr: "Papel 1¼ - 77mm x 44mm. Combustión media, 50 papeles por librito. El display trae 25 libritos.", cantidad: 1, xmayor: 25},
-    {id: 3, nombre: "Papel OCB Organico", precio: 292, img: "../resources/Papel-OCB-organico.png", descr: "Papel 77mm x 44mm. No blanqueado - orgánico. Combustión lenta. 50 papeles por librito. El display trae 25 libritos", cantidad: 1, xmayor: 25},
-    {id: 4, nombre: "Papel OCB Premium Negro", precio: 250, img: "../resources/Papel-OCB-Premium-Negro.jpg", descr: "OCB Negro Clásico. Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos", cantidad: 1, xmayor: 25},
-    {id: 5, nombre: "Papel OCB Ultimate", precio: 275, img: "../resources/Papel-OCB-ultimate_1.png", descr: "Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos.", cantidad: 1, xmayor: 25}
+    {id: 1, nombre: "Papel de Celulosa Sativa Club Tradicional", precio: 250, preciomayor: 1250, img: "../resources/Papel-Celulosa-Sativa-Club-tradicional.png", descr: "Papel transparente de celulosa. El sobre trae 40 papeles. La caja trae  22 sobres.", cantidad: 1, xmayor: 22},
+    {id: 2, nombre: "Papel OCB Blanco", precio: 220, preciomayor: 1250, img: "../resources/Papel-OCB-Blanco.png", descr: "Papel 1¼ - 77mm x 44mm. Combustión media, 50 papeles por librito. El display trae 25 libritos.", cantidad: 1, xmayor: 25},
+    {id: 3, nombre: "Papel OCB Organico", precio: 292, preciomayor: 1250, img: "../resources/Papel-OCB-organico.png", descr: "Papel 77mm x 44mm. No blanqueado - orgánico. Combustión lenta. 50 papeles por librito. El display trae 25 libritos", cantidad: 1, xmayor: 25},
+    {id: 4, nombre: "Papel OCB Premium Negro", precio: 250, preciomayor: 1250, img: "../resources/Papel-OCB-Premium-Negro.jpg", descr: "OCB Negro Clásico. Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos", cantidad: 1, xmayor: 25},
+    {id: 5, nombre: "Papel OCB Ultimate", precio: 275, preciomayor: 1250, img: "../resources/Papel-OCB-ultimate_1.png", descr: "Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos.", cantidad: 1, xmayor: 25}
     ];
 console.log(papeles);
 
@@ -39,11 +39,11 @@ papeles.forEach(producto => {
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
-                <h5 class="card-title">$${producto.precio}</h5>
+                <h5 class="card-title" id="precio-mod" >$${producto.precio}</h5>
                 <p class="card-text">${producto.descr} </p>
                 <form class="">
                 <input type="radio" name="tipo" value="almenor" checked id="">x1
-                <input type="radio" name="tipo" value="pormayor" id="">x${producto.xmayor}
+                <input type="radio" name="tipo" value="pormayor" >x${producto.xmayor}
                 </form>
                 <button id = "${producto.id}" class="text">Comprar</button>
             </div>
@@ -53,6 +53,13 @@ papeles.forEach(producto => {
     const boton = document.getElementById(producto.id)
     boton.addEventListener("click", () => {
         agregarAlCarrito(producto.id);
+        Toastify({
+            text: `${producto.nombre}`,
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            }).showToast();
     })
 });
 const agregarAlCarrito = (prodId) => {
@@ -90,16 +97,29 @@ const actualizarCarrito = () => {
         <p>${prod.nombre}</p>
         <p>$${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-        <button onclick = "eliminarDelCarrito(${prod.id})" class="btn btn-outline-danger">Elminar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+        <button onclick = "eliminarDelCarrito(${prod.id})" id="${prod.id}" class="btn btn-outline-danger">Elminar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
         </svg></button>
         `
         contenedorCarrito.append(div);
         localStorage.setItem("carrito", JSON.stringify(carrito));
+        let boton = document.getElementById(prod.id);
+        boton.addEventListener("click", () =>{
+            Toastify({
+                text: `${prod.nombre}`,
+                duration: 3000,
+                style: {
+                    background: "rgb(136, 12, 12)",
+                },
+                }).showToast();
+        })
     });
     contadorCarrito.innerText = carrito.length;
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0);
 }
+
+
+
 const buscarProducto = (entrada) => {
     console.log(entrada);
     let productoBuscado = papeles.find((producto) => producto.nombre.toUpperCase().includes(entrada));

@@ -18,6 +18,11 @@ botonVaciar.addEventListener("click", () => {
     actualizarCarrito();
     carrito = JSON.parse(localStorage.getItem("carrito"));
     localStorage.clear("carrito");
+    Swal.fire(
+        'Vaciaste el carrito',
+        '',
+        'success'
+    )
 })
 const papeles =[
     {id: 1, nombre: "Papel de Celulosa Sativa Club Tradicional", precio: 250, preciomayor: 1250, img: "../resources/Papel-Celulosa-Sativa-Club-tradicional.png", descr: "Papel transparente de celulosa. El sobre trae 40 papeles. La caja trae  22 sobres.", cantidad: 1, xmayor: 22},
@@ -39,7 +44,7 @@ papeles.forEach(producto => {
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
-                <h5 class="card-title" id="precio-mod" >$${producto.precio}</h5>
+                <h5 class="card-title" >$${producto.precio}</h5>
                 <p class="card-text">${producto.descr} </p>
                 <form class="">
                 <input type="radio" name="tipo" value="almenor" checked id="">x1

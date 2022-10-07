@@ -16,6 +16,11 @@ botonVaciar.addEventListener("click", () =>{
     actualizarCarrito();
     carrito = JSON.parse(localStorage.getItem("carrito"));
     localStorage.clear("carrito");
+    Swal.fire(
+        'Vaciaste el carrito',
+        '',
+        'success'
+    )
 });
 const tabacos = [
     { id: 1, nombre: "Tabaco Achalay Menta", precio: 150, img: "../resources/tabaco-achalay-menta.jpg" },
@@ -35,13 +40,13 @@ const tabacos = [
 ]; 
 tabacos.forEach(item => {
     let productos = document.createElement("div");
-    productos.className = "container-card col-xs-12 col-md-6 col-lg-4 my-3";
-    productos.innerHTML= `
-        <img src="${item.img}" alt="Avatar" class="image img__index" style="width:100%">
-        <h4 class="card-titulo text-center">${item.nombre}</h4>
-        <h4 class="card-titulo">$${item.precio}</h4>
-        <div class="middle">
-            <button id="${item.id}" class="text">Comprar</button>
+    productos.className = "card-tabaco col-xs-12 col-md-4 col-lg-4 my-3 mx-2 ";
+    productos.innerHTML = `
+        <img src="${item.img}" class="img-fluid rounded-start img__tabaco" alt="...">
+        <div class="card-body-tabaco">
+            <h5 class="card-title">${item.nombre}</h5>
+            <h5 class="card-title text-center" >$${item.precio}</h5>
+            <button id ="${item.id}" class="text">Comprar</button>
         </div>
     `
     contenedor.append(productos);

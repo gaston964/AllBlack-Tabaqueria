@@ -21,77 +21,73 @@ botonVaciar.addEventListener("click", () => {
         '',
         'success'
     )
-})
-const papeles =[
-    {id: 1, nombre: "Papel de Celulosa Sativa Club Tradicional", precio: 250, preciomayor: 1250, img: "../resources/Papel-Celulosa-Sativa-Club-tradicional.png", descr: "Papel transparente de celulosa. El sobre trae 40 papeles. La caja trae  22 sobres.", cantidad: 1, xmayor: 22},
-    {id: 2, nombre: "Papel OCB Blanco", precio: 220, preciomayor: 1250, img: "../resources/Papel-OCB-Blanco.png", descr: "Papel 1¼ - 77mm x 44mm. Combustión media, 50 papeles por librito. El display trae 25 libritos.", cantidad: 1, xmayor: 25},
-    {id: 3, nombre: "Papel OCB Organico", precio: 292, preciomayor: 1250, img: "../resources/Papel-OCB-organico.png", descr: "Papel 77mm x 44mm. No blanqueado - orgánico. Combustión lenta. 50 papeles por librito. El display trae 25 libritos", cantidad: 1, xmayor: 25},
-    {id: 4, nombre: "Papel OCB Premium Negro", precio: 250, preciomayor: 1250, img: "../resources/Papel-OCB-Premium-Negro.jpg", descr: "OCB Negro Clásico. Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos", cantidad: 1, xmayor: 25},
-    {id: 5, nombre: "Papel OCB Ultimate", precio: 275, preciomayor: 1250, img: "../resources/Papel-OCB-ultimate_1.png", descr: "Papel 1¼  - 77mm x 44mm. Combustión lenta. 50 papeles por librito . El display trae 25 libritos.", cantidad: 1, xmayor: 25}
-    ];
-console.log(papeles);
-
-papeles.forEach(producto => {
-    const {img, nombre, precio, descr, xmayor, id} = producto;
-    let item = document.createElement("div");
-    item.className = "card col-xs-12 col-md-4 col-lg-4 my-3 mx-2"
-    item.innerHTML = `
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="${img}" class="img-fluid rounded-start img__index" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">${nombre}</h5>
-                <h5 class="card-title" >$${precio}</h5>
-                <p class="card-text">${descr} </p>
-                <form class="">
-                <input type="radio" name="tipo" value="almenor" checked id="">x1
-                <input type="radio" name="tipo" value="pormayor" >x${xmayor}
-                </form>
-                <button id = "${id}" class="text">Comprar</button>
-            </div>
-        </div>
-    `;
-    contenedor.append(item)
-    const boton = document.getElementById(id)
-    boton.addEventListener("click", () => {
-        agregarAlCarrito(id);
-        Toastify({
-            text: `${nombre}`,
-            duration: 3000,
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            }).showToast();
-    })
 });
-const agregarAlCarrito = (prodId) => {
-    const existe = carrito.some(prod => prod.id === prodId);
-    if (existe) {
-        const prod = carrito.map(prod => {
-            if (prod.id === prodId) {
-                prod.cantidad++
-                prod.precio += prod.precio
-            }
+const papeles = async () => {
+    let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Papeles.json");
+    let data = await response.json();
+    data.forEach(producto => {
+        const {img, nombre, precio, descr, xmayor, id} = producto;
+        let item = document.createElement("div");
+        item.className = "card col-xs-12 col-md-4 col-lg-4 my-3 mx-2"
+        item.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="${img}" class="img-fluid rounded-start img__index" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">${nombre}</h5>
+                    <h5 class="card-title" >$${precio}</h5>
+                    <p class="card-text">${descr} </p>
+                    <form class="">
+                    <input type="radio" name="tipo" value="almenor" checked id="">x1
+                    <input type="radio" name="tipo" value="pormayor" >x${xmayor}
+                    </form>
+                    <button id = "${id}" class="text">Comprar</button>
+                </div>
+            </div>
+        `;
+        contenedor.append(item)
+        const boton = document.getElementById(id)
+        boton.addEventListener("click", () => {
+            agregarAlCarrito(id);
+            Toastify({
+                text: `${nombre}`,
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                }).showToast();
         })
-    } else {
-        let item = papeles.find((prod) => prod.id === prodId);
-        carrito.push({
-            id: item.id,
-            nombre: item.nombre,
-            precio: item.precio,
-            cantidad: item.cantidad
-        })
+    });
+    const agregarAlCarrito = (prodId) => {
+        const existe = carrito.some(prod => prod.id === prodId);
+        if (existe) {
+            const prod = carrito.map(prod => {
+                if (prod.id === prodId) {
+                    prod.cantidad++
+                    prod.precio += prod.precio
+                }
+            })
+        } else {
+            let item = data.find((prod) => prod.id === prodId);
+            carrito.push({
+                id: item.id,
+                nombre: item.nombre,
+                precio: item.precio,
+                cantidad: item.cantidad
+            })
+        }
+        actualizarCarrito();
     }
-    actualizarCarrito();
-}
+};
+papeles();
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId);
     const indice = carrito.indexOf(item);
     carrito.splice(indice, 1);
     actualizarCarrito();
-}
+};
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = "";
     carrito.forEach((prod) => {
@@ -121,10 +117,7 @@ const actualizarCarrito = () => {
     });
     contadorCarrito.innerText = carrito.length;
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0);
-}
-
-
-
+};
 const buscarProducto = (entrada) => {
     console.log(entrada);
     let productoBuscado = papeles.find((producto) => producto.nombre.toUpperCase().includes(entrada));

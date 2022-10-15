@@ -21,52 +21,56 @@ botonVaciar.addEventListener("click", () =>{
     )
 });
 const tabacos = async () =>{
-    let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Tabacos.json");
-    let data = await response.json();
-    data.forEach(item => {
-        const {img, nombre, precio, id} = item;
-        let productos = document.createElement("div");
-        productos.className = "card-tabaco col-xs-12 col-md-4 col-lg-4 my-3 mx-2 ";
-        productos.innerHTML = `
-            <img src="${img}" class="img-fluid rounded-start img__tabaco" alt="...">
-            <div class="card-body-tabaco">
-                <h5 class="card-title">${nombre}</h5>
-                <h5 class="card-title text-center" >$${precio}</h5>
-                <button id ="${id}" class="text">Comprar</button>
-            </div>
-        `
-        contenedor.append(productos);
-        let boton = document.getElementById(id);
-        boton.addEventListener("click", () => {
-            agregarAlCarrito(id);
-            Toastify({
-                text: `${nombre}`,
-                duration: 3000,
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                }).showToast();
-        })
-    })
-    const agregarAlCarrito = (prodId) => {
-        const existe = carrito.some( prod => prod.id === prodId)
-        if(existe){
-            const prod = carrito.map(prod => {
-                if(prod.id === prodId){
-                    prod.cantidad++
-                    prod.precio += prod.precio
-                }
+    try {
+        let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Tabacos.json");
+        let data = await response.json();
+        data.forEach(item => {
+            const {img, nombre, precio, id} = item;
+            let productos = document.createElement("div");
+            productos.className = "card-tabaco col-xs-12 col-md-4 col-lg-4 my-3 mx-2 ";
+            productos.innerHTML = `
+                <img src="${img}" class="img-fluid rounded-start img__tabaco" alt="...">
+                <div class="card-body-tabaco">
+                    <h5 class="card-title">${nombre}</h5>
+                    <h5 class="card-title text-center" >$${precio}</h5>
+                    <button id ="${id}" class="text">Comprar</button>
+                </div>
+            `
+            contenedor.append(productos);
+            let boton = document.getElementById(id);
+            boton.addEventListener("click", () => {
+                agregarAlCarrito(id);
+                Toastify({
+                    text: `${nombre}`,
+                    duration: 3000,
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    }).showToast();
             })
-        }else{
-            let item = data.find((prod) => prod.id === prodId);
-            carrito.push({
-                id: item.id,
-                nombre: item.nombre,
-                precio: item.precio,
-                cantidad : 1
-            });
+        })
+        const agregarAlCarrito = (prodId) => {
+            const existe = carrito.some( prod => prod.id === prodId)
+            if(existe){
+                const prod = carrito.map(prod => {
+                    if(prod.id === prodId){
+                        prod.cantidad++
+                        prod.precio += prod.precio
+                    }
+                })
+            }else{
+                let item = data.find((prod) => prod.id === prodId);
+                carrito.push({
+                    id: item.id,
+                    nombre: item.nombre,
+                    precio: item.precio,
+                    cantidad : 1
+                });
+            }
+            actualizarCarrito();
         }
-        actualizarCarrito();
+    } catch (error) {
+        console.log(error);
     }
 };
 tabacos();

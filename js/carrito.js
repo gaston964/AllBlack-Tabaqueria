@@ -27,6 +27,14 @@ cargarEventos();
 function agregarAlCarrito(e) {
     if (e.target.classList.contains("agregar-al-carro")) {
         const prodSelec = e.target.parentElement.parentElement;
+        const nombre = prodSelec.querySelector('h4').textContent;
+		Toastify({
+			text: `${nombre}`,
+			duration: 3000,
+			style: {
+				background: 'linear-gradient(to right, #00b09b, #96c93d)'
+			}
+		}).showToast();
         dataProduc(prodSelec);
     }
 };
@@ -89,8 +97,6 @@ const actualizarCarrito = () => {
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.total, 0);
 };
 const eliminarDelCarrito = (prodId) => {
-    const item = carrito.find((prod) => prod.id === prodId);
-    const indice = carrito.indexOf(item);
-    carrito.splice(indice, 1);
-    actualizarCarrito();
+    carrito = carrito.filter((prod) => Number(prod.id) !== prodId);
+	actualizarCarrito();
 };

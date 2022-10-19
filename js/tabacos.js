@@ -6,10 +6,10 @@ let contadorCarrito = document.getElementById("contador-carrito");
 let precioTotal = document.getElementById("precio-total");
 let carrito = [];
 document.addEventListener("DOMContentLoaded", () => {
-    localStorage.getItem("carrito") ? carrito = JSON.parse(localStorage.getItem("carrito")): [];
-        actualizarCarrito();
+    localStorage.getItem("carrito") ? carrito = JSON.parse(localStorage.getItem("carrito")) : [];
+    actualizarCarrito();
 })
-botonVaciar.addEventListener("click", () =>{
+botonVaciar.addEventListener("click", () => {
     carrito.length = 0;
     actualizarCarrito();
     carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -20,12 +20,12 @@ botonVaciar.addEventListener("click", () =>{
         'success'
     )
 });
-const tabacos = async () =>{
+const tabacos = async () => {
     try {
         let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Tabacos.json");
         let data = await response.json();
         data.forEach(item => {
-            const {img, nombre, precio, id} = item;
+            const { img, nombre, precio, id } = item;
             let productos = document.createElement("div");
             productos.className = "card-tabaco col-xs-12 col-md-4 col-lg-4 my-3 mx-2 ";
             productos.innerHTML = `
@@ -46,25 +46,25 @@ const tabacos = async () =>{
                     style: {
                         background: "linear-gradient(to right, #00b09b, #96c93d)",
                     },
-                    }).showToast();
+                }).showToast();
             })
         })
         const agregarAlCarrito = (prodId) => {
-            const existe = carrito.some( prod => prod.id === prodId)
-            if(existe){
+            const existe = carrito.some(prod => prod.id === prodId)
+            if (existe) {
                 const prod = carrito.map(prod => {
-                    if(prod.id === prodId){
+                    if (prod.id === prodId) {
                         prod.cantidad++
                         prod.precio += prod.precio
                     }
                 })
-            }else{
+            } else {
                 let item = data.find((prod) => prod.id === prodId);
                 carrito.push({
                     id: item.id,
                     nombre: item.nombre,
                     precio: item.precio,
-                    cantidad : 1
+                    cantidad: 1
                 });
             }
             actualizarCarrito();
@@ -83,7 +83,7 @@ const eliminarDelCarrito = (prodId) => {
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = "";
     carrito.forEach((prod) => {
-        const {nombre, precio,cantidad,id} = prod;
+        const { nombre, precio, cantidad, id } = prod;
         let div = document.createElement("div");
         div.className = "contenedor__carrito";
         div.innerHTML = `
@@ -97,14 +97,14 @@ const actualizarCarrito = () => {
         contenedorCarrito.append(div);
         localStorage.setItem("carrito", JSON.stringify(carrito));
         let boton = document.getElementById(id);
-        boton.addEventListener("click", () =>{
+        boton.addEventListener("click", () => {
             Toastify({
                 text: `${nombre}`,
                 duration: 3000,
                 style: {
                     background: "rgb(136, 12, 12)",
                 },
-                }).showToast();
+            }).showToast();
         })
     });
     contadorCarrito.innerText = carrito.length;

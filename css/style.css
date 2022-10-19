@@ -3,7 +3,6 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Oswald', sans-serif;
     background-image: url(../resources/patternpad.svg);
@@ -19,16 +18,13 @@ body {
     margin-left: 5px;
     padding: 0%;
 }
-
 .carrito {
     width: 35x;
     height: 40px;
 }
-
 .nav-link {
     color: white;
 }
-
 .carrusel__img {
     width: 350px;
     height: 350px;
@@ -75,7 +71,11 @@ body {
 .container-card:hover .middle {
     opacity: 1;
 } */
-
+/* .card-carrito{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}; */
 .text {
     background-color: #787e7c;
     color: white;

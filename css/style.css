@@ -11,6 +11,20 @@ body {
     margin-left: 0px;
     margin-right: 0px;
 }
+.boton__flotante{
+    width: 5rem;
+    border-radius: 90%;
+    height: 5rem;
+    bottom: 2rem;
+    position: fixed;
+    right: 2rem;
+    filter: drop-shadow(.8rem .8rem .8rem #0008);
+    transition: all .3s ease;
+}
+.boton__flotante:hover{
+    width: 6rem;
+    height: 6rem;
+}
 /* INDEX */
 .logo {
     width: 95px;
@@ -29,53 +43,6 @@ body {
     width: 350px;
     height: 350px;
 }
-/* 
-.container-card {
-    position: relative;
-    width: 280px;
-    margin: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card-titulo {
-    color: rgb(255, 255, 255);
-}
-
-.image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    border-radius: 35px;
-}
-
-.middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.container-card:hover .image {
-    opacity: 0.3;
-}
-
-.container-card:hover .middle {
-    opacity: 1;
-} */
-/* .card-carrito{
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-}; */
 .text {
     background-color: #787e7c;
     color: white;

@@ -26,14 +26,6 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html"><img class="logo" src="../resources/logo2.png"
                         alt="logo"></a>
-                <!-- Carrito de Compra -->
-                <button id="carritoCompra" class="btn btn-outline-success navbar-brand" type="button"
-                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                        class="bi bi-bag-heart" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
-                    </svg><span id="contador-carrito"> 0</span></button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -52,12 +44,6 @@
                             <a class="nav-link" href="./tabacos.html">Tabacos</a>
                         </li>
                     </ul>
-                    <!-- Buscador -->
-                    <div class="d-flex" role="search">
-                        <input id="inputBuscar" class="form-control me-2" type="search" placeholder="Buscar.."
-                            aria-label="Search">
-                        <button id="botonBuscar" class="btn btn-outline-success" type="submit">Buscar</button>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -84,6 +70,11 @@
             <article id="contenedor" class="container-fluid row justify-content-center">
             </article>
         </section>
+        <!-- Carrito de Compra -->
+        <button id = "carritoCompra" class="btn btn-success navbar-brand boton__flotante" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+        </svg><span id="contador-carrito"> 0</span></button>
     </main>
     <footer class="footer">
         <section class="container-fluid row">

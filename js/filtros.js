@@ -1,41 +1,34 @@
 const filtros = async () => {
-    let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Filtros.json");
-    let data = await response.json();
-    data.forEach(item => {
-        const { img, nombre, precio, descr, xmayor, id } = item;
-        let productos = document.createElement("div");
-        productos.className = "card col-xs-12 col-md-4 col-lg-3 my-3 mx-2";
-        productos.innerHTML = `
-        <div class="row g-0">
-        <div class="col-md-4">
-            <img src="${img}" class="img-fluid rounded-start img__index" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h4 class="card-title">${nombre}</h4>
-                <h5 class="card-title price">$${precio}</h5>
-                <p class="card-text">${descr} </p>
-                <form class="">
-                <input type="radio" name="tipo" value="almenor" checked id="">x1
-                <input type="radio" name="tipo" value="pormayor" >x${xmayor}
-                </form>
-                <button id = "${id}" class="agregar-al-carro text " >Comprar</button>
+    try {
+        let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Filtros.json");
+        let data = await response.json();
+        data.forEach(item => {
+            const { img, nombre, precio, descr, xmayor, id } = item;
+            let productos = document.createElement("div");
+            productos.className = "card col-xs-12 col-md-4 col-lg-3 my-3 mx-2";
+            productos.innerHTML = `
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="${img}" class="img-fluid rounded-start img__index" alt="...">
             </div>
-        </div>
-        `
-        contenedor.append(productos);
-        /* const boton1 = document.getElementById(id)
-        boton1.addEventListener("click", () => {
-            agregarAlCarrito(id);
-            Toastify({
-                text: `${nombre}`,
-                duration: 3000,
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-            }).showToast();
-        }) */
-    })
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title">${nombre}</h4>
+                    <h5 class="card-title price">$${precio}</h5>
+                    <p class="card-text">${descr} </p>
+                    <form class="">
+                    <input type="radio" name="tipo" value="almenor" checked id="">x1
+                    <input type="radio" name="tipo" value="pormayor" >x${xmayor}
+                    </form>
+                    <button id = "${id}" class="agregar-al-carro text " >Comprar</button>
+                </div>
+            </div>
+            `
+            contenedor.append(productos);
+        })
+    } catch (error) {
+        console.log(error);
+    }
 };
 filtros();
 

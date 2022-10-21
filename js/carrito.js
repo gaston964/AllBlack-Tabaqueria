@@ -10,6 +10,17 @@ function cargarEventos() {
         localStorage.getItem("carrito") ? carrito = JSON.parse(localStorage.getItem("carrito")) : [];
         actualizarCarrito();
     })
+    botonCompra.addEventListener("click", () => {
+        carrito.length = 0;
+        actualizarCarrito();
+        carrito = JSON.parse(localStorage.getItem("carrito"));
+        localStorage.clear("carrito");
+        Swal.fire(
+            'Compra Exitosa',
+            '',
+            'success'
+        )
+    });
     botonVaciar.addEventListener("click", () => {
         carrito.length = 0;
         actualizarCarrito();
@@ -18,7 +29,7 @@ function cargarEventos() {
         Swal.fire(
             'Vaciaste el carrito',
             '',
-            'success'
+            'error'
         )
     });
     contenedor.addEventListener("click", agregarAlCarrito);

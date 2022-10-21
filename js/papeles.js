@@ -1,4 +1,4 @@
-let contenedor = document.getElementById("contenedor");
+/* let contenedor = document.getElementById("contenedor");
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let botonCompra = document.getElementById("carritoCompra");
 let botonVaciar = document.getElementById("vaciar-carrito");
@@ -21,7 +21,7 @@ botonVaciar.addEventListener("click", () => {
         '',
         'success'
     )
-});
+}); */
 const papeles = async () => {
     let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Papeles.json");
     let data = await response.json();
@@ -36,19 +36,19 @@ const papeles = async () => {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">${nombre}</h5>
-                    <h5 class="card-title" >$${precio}</h5>
+                    <h4 class="card-title">${nombre}</h4>
+                    <h5 class="card-title price" >$${precio}</h5>
                     <p class="card-text">${descr} </p>
                     <form class="">
                     <input type="radio" name="tipo" value="almenor" checked id="">x1
                     <input type="radio" name="tipo" value="pormayor" >x${xmayor}
                     </form>
-                    <button id = "${id}" class="text">Comprar</button>
+                    <button id = "${id}" class="text agregar-al-carro">Comprar</button>
                 </div>
             </div>
         `;
         contenedor.append(item)
-        const boton = document.getElementById(id)
+        /* const boton = document.getElementById(id)
         boton.addEventListener("click", () => {
             agregarAlCarrito(id);
             Toastify({
@@ -58,9 +58,9 @@ const papeles = async () => {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 },
                 }).showToast();
-        })
+        }) */
     });
-    const agregarAlCarrito = (prodId) => {
+    /* const agregarAlCarrito = (prodId) => {
         const existe = carrito.some(prod => prod.id === prodId);
         if (existe) {
             const prod = carrito.map(prod => {
@@ -79,10 +79,10 @@ const papeles = async () => {
             })
         }
         actualizarCarrito();
-    }
+    } */
 };
 papeles();
-const eliminarDelCarrito = (prodId) => {
+/* const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId);
     const indice = carrito.indexOf(item);
     carrito.splice(indice, 1);
@@ -125,3 +125,4 @@ const buscarProducto = (entrada) => {
     inputBuscar.value = '';
 };
 botonBuscar.addEventListener('click', () => buscarProducto(inputBuscar.value.toUpperCase()));
+ */

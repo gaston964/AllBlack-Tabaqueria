@@ -3,7 +3,7 @@ const filtros = async () => {
         let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Filtros.json");
         let data = await response.json();
         data.forEach(item => {
-            const { img, nombre, precio, descr, xmayor, id } = item;
+            const { img, nombre, precio, descr, xmayor} = item;
             let productos = document.createElement("div");
             productos.className = "card col-xs-12 col-md-4 col-lg-3 my-3 mx-2";
             productos.innerHTML = `
@@ -20,7 +20,7 @@ const filtros = async () => {
                     <input type="radio" name="tipo" value="almenor" checked id="">x1
                     <input type="radio" name="tipo" value="pormayor" >x${xmayor}
                     </form>
-                    <button id = "${id}" class="agregar-al-carro text " >Comprar</button>
+                    <button id = "${item.dataid}" class="agregar-al-carro text " >Comprar</button>
                 </div>
             </div>
             `

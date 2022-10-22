@@ -2,11 +2,11 @@ const papeles = async () => {
     try {
         let response = await fetch("https://raw.githubusercontent.com/gaston964/JSON/main/Papeles.json");
         let data = await response.json();
-        data.forEach(producto => {
-            const { img, nombre, precio, descr, xmayor, id } = producto;
-            let item = document.createElement("div");
-            item.className = "card col-xs-12 col-md-4 col-lg-4 my-3 mx-2"
-            item.innerHTML = `
+        data.forEach(item => {
+            const { img, nombre, precio, descr, xmayor} = item;
+            let productos = document.createElement("div");
+            productos.className = "card col-xs-12 col-md-4 col-lg-4 my-3 mx-2"
+            productos.innerHTML = `
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="${img}" class="img-fluid rounded-start img__index" alt="...">
@@ -20,11 +20,11 @@ const papeles = async () => {
                         <input type="radio" name="tipo" value="almenor" checked id="">x1
                         <input type="radio" name="tipo" value="pormayor" >x${xmayor}
                         </form>
-                        <button id = "${id}" class="text agregar-al-carro">Comprar</button>
+                        <button id = "${item.dataid}" class="text agregar-al-carro">Comprar</button>
                     </div>
                 </div>
             `;
-            contenedor.append(item)
+            contenedor.append(productos)
         });
     } catch (error) {
         console.log(error);

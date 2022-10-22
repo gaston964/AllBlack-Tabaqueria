@@ -108,6 +108,6 @@ const actualizarCarrito = () => {
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.total, 0);
 };
 const eliminarDelCarrito = (prodId) => {
-    carrito = carrito.filter((prod) => Number(prod.id) !== prodId);
+    carrito = carrito.filter((prod) => prod.id !== prodId);
 	actualizarCarrito();
 };

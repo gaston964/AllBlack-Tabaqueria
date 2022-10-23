@@ -14,7 +14,8 @@ const tabacos = async () => {
                     <button id ="${item.dataid}" class="text agregar-al-carro">Comprar</button>
                 </div>
             `
-            contenedor.append(productos);
+            fragmento.append(productos);
+            contenedor.append(fragmento);
         })
     } catch (error) {
         console.log(error);

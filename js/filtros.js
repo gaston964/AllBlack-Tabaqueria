@@ -24,14 +24,11 @@ const filtros = async () => {
                 </div>
             </div>
             `
-            contenedor.append(productos);
+            fragmento.append(productos);
+            contenedor.append(fragmento);
         })
     } catch (error) {
         console.log(error);
     }
 };
 filtros();
-
-
-
-

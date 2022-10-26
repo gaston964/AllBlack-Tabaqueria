@@ -17,16 +17,16 @@ const filtros = async () => {
                     <h5 class="card-title price">$${precio}</h5>
                     <p class="card-text">${descr} </p>
                     <form class="">
-                    <input type="radio" name="tipo" value="almenor" checked id="">x1
-                    <input type="radio" name="tipo" value="pormayor" >x${xmayor}
+                    <input type="radio" name="tipo" value="almenor" checked>x1
+                    <input type="radio" name="tipo" value="pormayor" id="pormayor" >x${xmayor}
                     </form>
                     <button id = "${item.dataid}" class="agregar-al-carro text " >Comprar</button>
                 </div>
             </div>
             `
             fragmento.append(productos);
-            contenedor.append(fragmento);
         })
+        contenedor.append(fragmento);
     } catch (error) {
         console.log(error);
     }

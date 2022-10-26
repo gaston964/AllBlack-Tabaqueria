@@ -15,8 +15,8 @@ const tabacos = async () => {
                 </div>
             `
             fragmento.append(productos);
-            contenedor.append(fragmento);
         })
+        contenedor.append(fragmento);
     } catch (error) {
         console.log(error);
     }

@@ -16,10 +16,6 @@ const filtros = async () => {
                     <h4 class="card-title">${nombre}</h4>
                     <h5 class="card-title price">$${precio}</h5>
                     <p class="card-text">${descr} </p>
-                    <form class="">
-                    <input type="radio" name="tipo" value="almenor" checked>x1
-                    <input type="radio" name="tipo" value="pormayor" id="pormayor" >x${xmayor}
-                    </form>
                     <button id = "${item.dataid}" class="agregar-al-carro text " >Comprar</button>
                 </div>
             </div>

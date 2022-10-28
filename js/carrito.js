@@ -12,42 +12,28 @@ function cargarEventos() {
         actualizarCarrito();
     })
     botonCompra.addEventListener("click", () => {
-        if(carrito.length === 0){
-            Swal.fire(
-                'El carrito esta vacio!',
-                '',
-                'warning'
-            )
-        }else{
+        if (carrito.length === 0) {
+            Swal.fire('El carrito esta vacio!','','warning')
+        } else {
             carrito.length = 0;
-            actualizarCarrito();
-            carrito = JSON.parse(localStorage.getItem("carrito"));
-            localStorage.clear("carrito");
-            Swal.fire(
-                'Compra Exitosa',
-                '',
-                'success'
-            )
+			contadorCarrito.innerText = carrito.length;
+			precioTotal.innerText = 0;
+			localStorage.removeItem('carrito');
+			contenedorCarrito.innerHTML = '';
+            Swal.fire('Compra Exitosa','','success')
         }
     });
     botonVaciar.addEventListener("click", () => {
-        if(carrito.length === 0){
-            Swal.fire(
-                'El carrito esta vacio!!',
-                '',
-                'warning'
-            )
-        }else{
-            carrito.length = 0;
-            actualizarCarrito();
-            carrito = JSON.parse(localStorage.getItem("carrito"));
-            localStorage.clear("carrito");
-            Swal.fire(
-                'Vaciaste el carrito',
-                '',
-                'error'
-            )
-        }
+        if (carrito.length === 0) {
+			Swal.fire('El carrito esta vacio!!', '', 'warning');
+		} else {
+			carrito.length = 0;
+			contadorCarrito.innerText = carrito.length;
+			precioTotal.innerText = 0;
+			localStorage.removeItem('carrito');
+			contenedorCarrito.innerHTML = '';
+			Swal.fire('Vaciaste el carrito', '', 'error');
+		}
     });
     contenedor.addEventListener("click", agregarAlCarrito);
 };
@@ -115,7 +101,7 @@ const actualizarCarrito = () => {
             eliminarDelCarrito(e, id);
             Toastify({
                 text: `${nombre}`,
-                duration: 3000,
+                duration: 2000,
                 style: {
                     background: "rgb(136, 12, 12)",
                 },
@@ -125,21 +111,6 @@ const actualizarCarrito = () => {
     contadorCarrito.innerText = carrito.length;
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.total, 0);
 };
-/* function eliminarDelCarrito(e){
-    if(e.target.classList.contains("eliminar-carro")){
-        const productoId = e.target.getAttribute("id");
-         // Elimina del arreglo de carrito por el data-id
-        carrito = carrito.filter(producto => producto.id !== productoId);
-        actualizarCarrito(); // Iterar sobre el carrito y mostrar su HTML
-    }
-} */
-/* const eliminarDelCarrito = (prodId) => {
-    carrito = carrito.filter((prod) => prod.id !== prodId);
-    actualizarCarrito();
-}; */
-/* 
-onclick = "eliminarDelCarrito(${id})"
-*/
 const eliminarDelCarrito = (e, prodId) => {
     let botonclick = e.target;
     botonclick.parentElement.remove()

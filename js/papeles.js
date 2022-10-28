@@ -16,10 +16,6 @@ const papeles = async () => {
                         <h4 class="card-title">${nombre}</h4>
                         <h5 class="card-title price" >$${precio}</h5>
                         <p class="card-text">${descr} </p>
-                        <form class="">
-                        <input type="radio" name="tipo" value="almenor" checked id="">x1
-                        <input type="radio" name="tipo" value="pormayor" >x${xmayor}
-                        </form>
                         <button id = "${item.dataid}" class="text agregar-al-carro">Comprar</button>
                     </div>
                 </div>
